@@ -1,4 +1,5 @@
 # A script to create an array to run MitoFinder in Hydra using Spades assemblies 
+See "How to run array" file 
 ```
 #!bin/bash
 ############################################################
