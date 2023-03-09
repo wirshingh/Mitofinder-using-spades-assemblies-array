@@ -16,15 +16,10 @@ bash mf_array_builder_output.sh
 Source qsub_mf_spades_array.sou
 
 
+Example:
+Commands for running array script:
 
-
-
-EXTRA Notes.......
-
-
-Example Run:
-
-bash mf_array_builder_output.sh -i /example/input/path/ -o /example/output/path/ -g 5 -r /example/path/reference_genome.gb
+bash mf_array_builder_output.sh -i /example/input/path/contigs -o /example/output/path/directory/ -g 5 -r /example/path/reference_genome.gb
 
 
 Then launch the array:
