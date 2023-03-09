@@ -1,5 +1,30 @@
 # A script to create an array to run MitoFinder in Hydra using Spades assemblies 
-See "ReadMe_howToRunArray.txt" file above for instructions on how to use this script. 
+How to use the script:
+
+### Step 1
+Run "MvSpadesContigs.sh" to rename Spades contig output files (contigs.fasta) with unique individual samples names. This command will find all "*contigs.fasta" files in the subdirectories of the working directory and copy them to the working directory. During the copy it will prepend said fasta file with the name of it's immediate parent directory.
+
+After this completes, a new directory called contigs will be created in the working directory into which the renamed fasta files will be moved into.
+
+```
+find . -type f -exec sh -c 'for f do x=${f#./}; if [[ $x == *"/contigs.fasta" ]]; then cp "$x" "${x////_}"; fi done' {} + && mkdir contigs/ && mv *_contigs.fasta contigs/;
+```
+
+### Step 2
+Run array builder. Copy large script below and run in Hydra. Script puts the output files in a directory you specify:
+
+Example:
+bash mf_array_builder_output.sh 
+-i : path to input spades contains
+-o: path to output directory
+-r: path to reference genome
+-g: genetic translation table number (1-25, see MitoFinder Manual)
+
+Commands for running script:
+```
+bash mf_array_builder_output.sh -i /example/input/path/contigs -o /example/output/path/directory/ -g (number 1 - 25) -r /example/path/reference_genome.gb
+```
+This is the script to copy and run on Hydra. Save it as "mf_array_builder_output.sh"
 ```
 #!bin/bash
 ############################################################
@@ -157,4 +182,11 @@ fi
 
 # Make the resulting bash file executable
 chmod +x mf_spades.sh
+```
+
+
+### Step 3
+Then launch the array:
+```
+Source qsub_mf_spades_array.sou
 ```
