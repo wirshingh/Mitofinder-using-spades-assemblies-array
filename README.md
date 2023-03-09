@@ -11,7 +11,7 @@ find . -type f -exec sh -c 'for f do x=${f#./}; if [[ $x == *"/contigs.fasta" ]]
 ```
 
 ### Step 2
-Run array builder. Copy large script below and run in Hydra. Script puts the output files in a directory you specify:
+Run array builder. Copy the large script below and run in Hydra. Script puts the output files in a directory you specify:
 
 Example:
 bash mf_array_builder_output.sh 
