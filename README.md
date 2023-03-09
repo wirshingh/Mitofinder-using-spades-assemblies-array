@@ -186,7 +186,7 @@ chmod +x mf_spades.sh
 
 
 ### Step 3
-Then launch the array:
+Launch the array:
 ```
 Source qsub_mf_spades_array.sou
 ```
