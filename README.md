@@ -18,7 +18,7 @@ bash mf_array_builder_output.sh
 -i : path to input spades contains
 -o: path to output directory
 -r: path to reference genome
--g: genetic translation table number (1-25, see MitoFinder Manual)
+-g: genetic translation table number (1-25, see MitoFinder Manual). Common code examples, Cnidarians 5, most Invertebrates 6, Echinoderms and Flatworms 10.
 
 Commands for running script:
 ```
