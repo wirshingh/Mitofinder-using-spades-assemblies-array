@@ -2,7 +2,7 @@
 How to use the script:
 
 ### Step 1
-Run "MvSpadesContigs.sh" (command below) to rename Spades contig output files (contigs.fasta) with unique individual samples names. This command will find all "*contigs.fasta" files in the subdirectories of the working directory and copy them to the working directory. During the copy it will prepend said fasta file with the name of it's immediate parent directory.
+Run "MvSpadesContigs.sh" (command below) from the working directory to rename Spades contig output files (contigs.fasta) with unique individual samples names. This command will find all "*contigs.fasta" files in the subdirectories of the working directory and copy them to the working directory. During the copy it will prepend said fasta file with the name of it's immediate parent directory.
 
 After this completes, a new directory called contigs will be created in the working directory into which the renamed fasta files will be moved into.
 
@@ -188,5 +188,5 @@ chmod +x mf_spades.sh
 ### Step 3
 Launch the array:
 ```
-Source qsub_mf_spades_array.sou
+source qsub_mf_spades_array.sou
 ```
